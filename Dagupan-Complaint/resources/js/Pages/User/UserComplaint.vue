@@ -1,27 +1,26 @@
 <template>
     <div class="flex text-2xl font-bold text-red-500">
-       
-    </div>
-<div>
+        <form >
+        <input v-model="message" placeholder="edit me" />
 
-    <input v-model="message" placeholder="edit me" />
+      
 
-    </div>
+        <div>>Selected: {{ selected }}</div>
 
-    <div>Selected: {{ selected }}</div>
+        <select v-model="selected">
+        <option disabled value="">Please select one</option>
+        <option>Lucao</option>
+        <option>Tapuac</option>
+        <option>Mukat</option>
 
-<select v-model="selected">
-  <option disabled value="">Please select one</option>
-  <option>Lucao</option>
-  <option>Tapuac</option>
-  <option>Mukat</option>
+        </select>
 
-</select>
-
-<input v-model="message" placeholder="edit me">
-<br>
-
-<button class="border-solid">ENTER</button>
+        <input v-model="message" placeholder="edit me"/>
+        <br/>
+        
+            <button type="submit" >ENTER</button>
+    </form>
+</div>
 
 
 </template>
@@ -30,5 +29,10 @@ export default {
     setup() {
         
     },
+    data(){
+        return{
+            selected:'',
+        }
+    }
 }
 </script>
