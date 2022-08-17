@@ -36,3 +36,6 @@ Route::middleware([
 Route::get('/user', function () {
     return Inertia::render('User/UserComplaint');
 })->name('complaint');
+Route::get('/admin', function () {
+    return Inertia::render('Admin/AdminView');
+})->name('admin');
