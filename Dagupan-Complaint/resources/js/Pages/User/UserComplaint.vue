@@ -17,11 +17,11 @@
         <div class="Div2">
 
  <p>Name</p>
-    <input class="input1" v-model="message" placeholder="Enter your name here"/>
+    <input class="input1"  placeholder="Enter your name here"/>
 
 <br>
 
-    <p class="Select1">Select Location: {{ selected }}</p>
+    <p class="Select1">Select Location:</p>
 
      <select>
             <option class="PSO">Please select one</option>
@@ -31,9 +31,9 @@
      </select>
 
 
-<p class="Input2">Complaints: {{ message }}</p>
+<p class="Input2">Complaints: </p>
 
-<input class="Pholder" v-model="message" placeholder="Complaints" />
+<input class="Pholder"  placeholder="Complaints" />
 
   <button>SUBMIT</button>
             </div>
@@ -43,7 +43,13 @@
 
    
 </template>
-
+<script>
+export default {
+    setup() {
+        
+    },
+}
+</script>
 <style>
 
 
@@ -62,7 +68,7 @@
 body{
 margin: 0;
 padding: 0;
-background-image:url("../../../../public/Image/dagupanark.jpg");
+background-image:url("../../../../public/Images/dagupanark.jpg");
 background-repeat:no-repeat;
 background-size: cover;
 }
@@ -155,10 +161,3 @@ margin-right: 50%;
 </style>
 
 
-<script>
-export default {
-    setup() {
-        
-    },
-}
-</script>
