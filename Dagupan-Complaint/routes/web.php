@@ -33,11 +33,6 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
-
 Route::get('/user', function () {
     return Inertia::render('User/UserComplaint');
 })->name('complaint');
-
-Route::get('/admin', function () {
-    return Inertia::render('Admin/AdminView');
-})->name('adminView');

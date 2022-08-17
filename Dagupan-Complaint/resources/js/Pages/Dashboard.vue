@@ -1,17 +1,8 @@
-
-<script>
+<script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Welcome from '@/Jetstream/Welcome.vue';
-export default {
- 
-    setup() {
-        
-    },
-    components:{
-        AppLayout,
-        Welcome
-    }
-}
+
+
 </script>
 
 <template>

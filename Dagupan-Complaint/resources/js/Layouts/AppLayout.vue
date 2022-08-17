@@ -52,9 +52,6 @@ const logout = () => {
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </JetNavLink>
-                                 <JetNavLink :href="route('adminView')" :active="route().current('adminView')">
-                                    Complaints
-                                </JetNavLink>
                             </div>
                         </div>
 

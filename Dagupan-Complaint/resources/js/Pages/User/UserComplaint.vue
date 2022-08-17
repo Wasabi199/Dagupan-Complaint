@@ -1,31 +1,44 @@
+
 <template>
-    <div class="flex text-2xl font-bold text-red-500">
-       
-    </div>
-<div>
+<html>
+    <head>
 
-    <input v-model="message" placeholder="edit me" />
 
-      
+</head>
 
-        <div>>Selected: {{ selected }}</div>
 
-        <select v-model="selected">
-        <option disabled value="">Please select one</option>
-        <option>Lucao</option>
-        <option>Tapuac</option>
-        <option>Mukat</option>
+ 
+    <form>
 
-        </select>
+<img src="">
 
-        <input v-model="message" placeholder="edit me"/>
-        <br/>
-        
-            <button type="submit" >ENTER</button>
+    <div class="Div1">
+        <div class="Div2">
+
+ <p>Name</p>
+    <input class="input1" v-model="message" placeholder="Enter your name here"/>
+
+<br>
+
+    <p class="Select1">Select Location: {{ selected }}</p>
+
+     <select>
+            <option class="PSO">Please select one</option>
+            <option>Lucao</option>
+            <option>Tapuac</option>
+            <option>Mukat</option>
+     </select>
+
+
+<p class="Input2">Complaints: {{ message }}</p>
+
+<input class="Pholder" v-model="message" placeholder="Complaints" />
+
+  <button>SUBMIT</button>
+            </div>
+        </div>
     </form>
-</div>
-
-
+</html>
 </template>
 
 <style>
@@ -144,10 +157,5 @@ export default {
     setup() {
         
     },
-    data(){
-        return{
-            selected:'',
-        }
-    }
 }
 </script>
