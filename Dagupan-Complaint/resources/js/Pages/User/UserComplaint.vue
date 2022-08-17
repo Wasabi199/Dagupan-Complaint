@@ -1,5 +1,6 @@
 
 <template>
+
 <html>
     <head>
 
@@ -39,6 +40,8 @@
         </div>
     </form>
 </html>
+
+   
 </template>
 
 <style>
@@ -59,7 +62,7 @@
 body{
 margin: 0;
 padding: 0;
-background-image:url("C:\Users\leand\OneDrive\Documents\GitHub\Dagupan-Complaint\Dagupan-Complaint\public\Image\dagupanark.jpg");
+background-image:url("../../../../public/Image/dagupanark.jpg");
 background-repeat:no-repeat;
 background-size: cover;
 }
