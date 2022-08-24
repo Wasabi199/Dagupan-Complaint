@@ -1,48 +1,46 @@
 
 <template>
 
-<html>
-    <head>
-
-
-</head>
-
-
- 
     <form>
 
-<img src="">
+    <div class="border-4 border-[#005176]  w-1/2 h-1/2 float-left  ml-20 mt-40 rounded-lg">
+      
 
-    <div class="Div1">
-        <div class="Div2">
+ <p class="ml-10 mt-10 text-[#005176] font-[arial]">Name</p>
 
- <p>Name</p>
-    <input class="input1"  placeholder="Enter your name here"/>
+ <div class="ml-10 mt-3 border-black">
+    <input class="text p-3 border-[#005176] font-[arial] border-2 rounded-lg"  placeholder="Enter your name here"  />
+</div>
 
 <br>
 
-    <p class="Select1">Select Location:</p>
+<div class="ml-10 mt-3">
 
-     <select>
-            <option class="PSO">Please select one</option>
-            <option>Lucao</option>
-            <option>Tapuac</option>
-            <option>Mukat</option>
-     </select>
+        <select class="rounded-lg">
 
+            <option class="text-[#005176] font-[arial]">Please select one</option>
+            <option class="text-[#005176] font-[arial]">Lucao</option>
+            <option class="text-[#005176] font-[arial]">Pusa</option>
+            <option class="text-[#005176] font-[arial]">ASO</option>
+            <option class="text-[#005176] font-[arial]">Kulangot</option>
+            <option class="text-[#005176] font-[arial]">Mukat</option>
+            <option class="text-[#005176] font-[arial]">Bago nen ryan jad ebet</option>
 
-<p class="Input2">Complaints: </p>
+        </select>
 
-<input class="Pholder"  placeholder="Complaints" />
+<p class="ml-3 mt-3 text-[#005176] font-[arial]">Complaints:</p>
 
-  <button>SUBMIT</button>
+<input class="ml-5 mb-1 mt-3 font-[arial] w-11/12 h-full p-12 border-2 border-[#005176] rounded-lg"  placeholder="Complaints" />
+<div>
+<button class="border-2 border-[#005176] font-[arial] float-right mr-5 mt-2 mb-5 p-3 rounded-lg flex">SUBMIT</button>
+</div>
+                </div>
             </div>
-        </div>
-    </form>
-</html>
 
-   
+    </form>
+
 </template>
+
 <script>
 export default {
     setup() {
@@ -50,114 +48,3 @@ export default {
     },
 }
 </script>
-<style>
-
-
-.Div1{
-    padding: 0;
-    margin:0;
-    background-color: #083248;
-    color: white;
-    opacity: 80%;
-}
-
-.Div1 input {
-    color: black;
-}
-
-body{
-margin: 0;
-padding: 0;
-background-image:url("../../../../public/Images/dagupanark.jpg");
-background-repeat:no-repeat;
-background-size: cover;
-}
-
-button{
-    margin-left: 85%;
-    margin-top: 2%;
-    border: solid;
-    border-radius: 10px;
-    padding: 10px;
-    border-width: 1px;
-    width:100px;
-}
-
-button:hover{
-
-transition:0.5s;
-background-color:#e89c31;
-
-}
-.input1{
-    margin-top: 0%;
-    border: solid;
-    border-radius:10px;
-    box-shadow: 1px 1px 1px 1px;
-    width: 50%;
-    height: 10%;
-    font-size: 20px;
-    padding: 20px;
-    border-width: 0.5px;
-}
-
-.Input2{
-    margin-top: 3%;
-    width: 100%;
-    
-
-
-}
-.Pholder{
-    height: 35%;
-    width: 100%;
-    border: solid;
-    border-radius: 10px;
-    border-width: 0.5px;
-    padding: 10px;
-   
-    
-}
-
-
-.Select1{
-margin-top: 3%;
-color:white;
-}
-
-Select option{
-background-color:#083248;
-
-}
-Select option:hover{
-    transition:0.5;
-    background-color:#083248;
-
-}
-
-
-.Div1{
-height: 50%;
-width: 50%;
-position: absolute;
-
-border-radius: 10px;
-
-margin: 5%;
-padding:1%;
-
-}
-
-.Div2{
-height: 100%;
-width: 100%;
-position: relative;
-
-padding:1%;
-margin-right: 50%;
-}
-
-
-</style>
-
-
