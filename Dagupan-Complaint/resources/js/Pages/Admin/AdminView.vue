@@ -10,6 +10,11 @@
             <p  class="p-5  border-2 border-[#005176] w-11/12 h-100 ml-5 mr-5 mb-5 rounded-lg" >{{this.Complaint.value}}</p>
       </div>
     </div>
+      <div v-if="this.Complaint == Object" class=" mt-10 w-full py-20 text-center  h-full rounded-lg">
+        <div class="font-bold">
+             <h1>Please Select a Complaint</h1>
+      </div>
+    </div>
             <!--Complaint Left-side-->
         <div class="relative border-4 mb-5 border-[#005176] mt-10 w-full h-full max-h-max ml-8 rounded-lg bg-[#fdfff] ">
 
@@ -46,23 +51,11 @@
                 </div>
                 
                 </div>
-                          <Pagination  :links="Complaints.links"></Pagination>
+                    <Pagination  :links="Complaints.links"></Pagination>
                 </div>
           <!--end of left-complaint-->
             </div>
-
-
-
-
-
-
-
-                   
-
-
     </AppLayout>
-
-  
 </template>
 
 
@@ -70,16 +63,21 @@
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Pagination from '../../Components/Pagination.vue';
 import {pickBy, throttle} from 'lodash';
+
+
 export default {
     setup() {
         
+        
     },
+
     components:{
         AppLayout,
         Pagination,
         pickBy,
-        throttle
+        throttle,
     },
+
     props:{
         Complaints:Object,
         // filter:Object
@@ -89,7 +87,7 @@ export default {
             Complaint:Object
         }
     },
-       watch: {
+    watch: {
         form: {
             deep: true,
             handler:
@@ -104,11 +102,12 @@ export default {
             ),
         },
     },
+
     methods:{
         click(complaint){
             this.Complaint = complaint
           
         }
-    }
+    },
 }
 </script>
