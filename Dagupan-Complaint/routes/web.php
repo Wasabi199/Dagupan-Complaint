@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,6 +26,7 @@ Route::get('/', function () {
     ]);
 });
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -33,9 +36,9 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
-Route::get('/user', function () {
-    return Inertia::render('User/UserComplaint');
-})->name('complaint');
-Route::get('/admin', function () {
-    return Inertia::render('Admin/AdminView');
-})->name('admin');
+
+Route::get('/user',[UserController::class,'complaint'])->name('complaint');
+
+Route::prefix('Admin')->middleware(['auth:sanctum','Admin'])->group(function(){
+    Route::get('DagupanComplaint',[AdminController::class,'dagupanComplaint'])->name('Complaints');
+});

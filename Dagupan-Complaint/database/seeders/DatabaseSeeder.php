@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Complaints;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -23,9 +25,10 @@ class DatabaseSeeder extends Seeder
         // ]);
         User::create([
             'name' => "Super Admin",
-            // 'usertype' => 1,
+            'userType' => 'Admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('password'),
         ]);
+        Complaints::factory(50)->create();
     }
 }

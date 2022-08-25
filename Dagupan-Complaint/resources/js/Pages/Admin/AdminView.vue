@@ -1,87 +1,55 @@
 <template>
-
     <AppLayout>
-<span>
 
-   <!--complaint Full Screen--><div class=" border-4 border-[#005176]  w-6/12 h-3/6 float-right  mr-20 mt-40 rounded-lg">
-
-<div>
-
-                    <p class="m-2.5 ml-5 mt-5 text-[#005176] font-[arial]">Name</p>
-                    <p class="m-2.5 ml-5 text-[#005176] font-[arial]">Location</p>
-                    <p class="m-2.5 ml-5 text-[#005176] font-[arial]">Complaints:</p>
-
-   
-
-        <input type="text" placeholder="Complaints display here" class="p-3 border-2 border-[#005176] w-11/12  ml-5 mb-4 mt-4 rounded-lg">
-
-   
-
+<div class="flex mr-10  m-auto ml-10 h-full w-100 justify-center">
+    <div v-if="this.Complaint != Object" class=" border-4 border-[#005176] mt-10 w-full  h-full rounded-lg">
+        <div >
+            <p class="m-2.5 ml-5 mt-5 text-[#005176] font-[arial]">{{this.Complaint.name}}</p>
+            <p class="m-2.5 ml-5 text-[#005176] font-[arial]">{{this.Complaint.location}}</p>
+            <p class="m-2.5 ml-5 font-bold text-[#005176] font-[arial] mt-5">Complaints:</p>
+            <p  class="p-5  border-2 border-[#005176] w-11/12 h-100 ml-5 mr-5 mb-5 rounded-lg" >{{this.Complaint.value}}</p>
       </div>
-        </div>
+    </div>
+            <!--Complaint Left-side-->
+        <div class="relative border-4 mb-5 border-[#005176] mt-10 w-full h-full max-h-max ml-8 rounded-lg bg-[#fdfff] ">
 
-
-
-            <!--Complaint Left-side--><div class="relative border-4  border-[#005176] w-1/4 h-4/5 mr-auto mt-10 ml-8 rounded-lg bg-[#fdfff] ">
-
-            <div class="p-3">
-                    <div class=""></div>
-                    <div class="border-b-2 border-[#005176] rounded-t-lg w-auto mt-1 p-3 hover:bg-gray-300 transition duration-300">
-                    <p class=" text-[#005176] font-[arial]">Name</p>
-                    <p class=" text-[#005176] font-[arial]">Location</p>
-                    <div class="ml-2.5">
-                    <p class="border-2 border-red-700 w-11/12 h-4/5  m-2.5 ml-1 p-3 rounded-lg font-[arial]">
-                        Lorem ipsum dolor sit  
-                    </p></div>
-                      
-            </div>
-
-                    <div class="pt-3"></div>
-                    <div class="border-b-2 border-[#005176] rounded-t-lg w-auto mt-1 p-3 hover:bg-gray-300 transition duration-300">
-                    <p class=" text-[#005176] font-[arial]">Name</p>
-                    <p class=" text-[#005176] font-[arial]">Location</p>
-                    <div class="ml-2.5">
-                    <p class="border-2 border-red-700 w-11/12 h-4/5  m-2.5 ml-2.5 p-3 rounded-lg font-[arial]">
-                        Lorem ipsum dolor sit 
-                    </p></div>
-                      
-            </div>
-
-                    <div class="pt-3"></div>
-                    <div class="border-b-2 border-[#005176] rounded-t-lg w-auto mt-1 p-3 hover:bg-gray-300 transition duration-300">
-                    <p class=" text-[#005176] font-[arial]">Name</p>
-                    <p class="text-[#005176] font-[arial]">Location</p>
-                    <div class="ml-2.5">
-                    <p class="border-2 border-red-700 w-11/12 h-4/5  m-2.5 ml-2.5 p-3 rounded-lg font-[arial]">
-                        Lorem ipsum dolor sit
-                    </p></div>
-                      
-            </div>
-
-                    <div class="pt-3"></div>
-                    <div class="border-b-2 border-[#005176] rounded-t-lg w-auto mt-1 p-3 hover:bg-gray-300 transition duration-300">
-                    <p class=" text-[#005176] font-[arial]">Name</p>
-                    <p class=" text-[#005176] font-[arial]">Location</p>
-                    <div class="ml-2.5">
-                    <p class="border-2 border-red-700 w-11/12 h-4/5  m-2.5 ml-2.5 p-3 rounded-lg font-[arial]">
-                        Lorem ipsum dolor sit 
-                    </p></div>
-                      
-            </div>
-
-                    <div class="pt-3"></div>
-                    <div class="border-b-2 border-[#005176] rounded-t-lg w-auto mt-1 p-3 hover:bg-gray-300 transition duration-300">
-                    <p class=" text-[#005176] font-[arial]">Name</p>
-                    <p class=" text-[#005176] font-[arial]">Location</p>
-                    <div class="ml-2.5">
-                    <p class="border-2 border-red-700 w-11/12 h-4/5  m-2.5 ml-2.5 p-3 rounded-lg font-[arial]">
-                        Lorem ipsum dolor sit  
-                    </p></div>
-            </div>
-                </div>
+            <div v-for="complaint in Complaints.data" v-bind:key="complaint.id" class="p-3">
+                <div v-if="complaint.onRead == 0" @click="click(complaint)" class="border-b-2 text-gray-200 bg-slate-800 border-[#005176] rounded-t-lg w-auto mt-1 p-3 hover:bg-gray-300 hover:text-slate-900  transition duration-300 cursor-pointer">
+                   <div class="flex text-lg  font-semibold">
+                    <p class=" font-[arial]">From:</p>
+                    <p class="ml-2  font-[arial]">{{complaint.name}}</p>
+                   </div>
+                  <div class="flex text-lg  font-semibold">
+                    <p class="  font-[arial]">Location:</p>
+                    <p class="ml-2  font-[arial]">{{complaint.location}}</p>
+                   </div>
+                    <div class="ml-2.5 h-20 ">
+                    <p class=" overflow-hidden border-2 w-11/12 h-4/5  m-2.5 ml-1 p-3 rounded-lg font-[arial]">
+                        {{complaint.value}} 
+                    </p>
                     </div>
-                      <!--end of left-complaint-->
-
+                </div>
+                 <div v-else class="border-b-2 border-[#005176] rounded-t-lg w-auto mt-1 p-3 hover:bg-gray-300 transition duration-300">
+                   <div class="flex text-lg text-black font-semibold">
+                    <p class=" text-[#005176] font-[arial]">Name:</p>
+                    <p class="ml-2 text-[#005176] font-[arial]">{{complaint.name}}</p>
+                   </div>
+                  <div class="flex text-lg text-black font-semibold">
+                    <p class=" text-[#005176] font-[arial]">Location:</p>
+                    <p class="ml-2 text-[#005176] font-[arial]">{{complaint.location}}</p>
+                   </div>
+                    <div class="ml-2.5 h-20 ">
+                    <p class=" overflow-hidden border-2 border-red-700 w-11/12 h-4/5  m-2.5 ml-1 p-3 rounded-lg font-[arial]">
+                        {{complaint.value}} 
+                    </p>
+                    </div>
+                </div>
+                
+                </div>
+                          <Pagination  :links="Complaints.links"></Pagination>
+                </div>
+          <!--end of left-complaint-->
+            </div>
 
 
 
@@ -90,22 +58,57 @@
 
 
                    
-</span>
+
 
     </AppLayout>
 
-    <!--lupay aso si ryan-->
+  
 </template>
 
 
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue';
+import Pagination from '../../Components/Pagination.vue';
+import {pickBy, throttle} from 'lodash';
 export default {
     setup() {
         
     },
     components:{
-        AppLayout
+        AppLayout,
+        Pagination,
+        pickBy,
+        throttle
+    },
+    props:{
+        Complaints:Object,
+        // filter:Object
+    },
+    data(){
+        return{
+            Complaint:Object
+        }
+    },
+       watch: {
+        form: {
+            deep: true,
+            handler:
+            throttle(
+                function () {
+                    this.$inertia.get(route().current(), pickBy(this.form),{
+                        preserveState: true,
+                        preserveScroll: true,
+                    })
+                },
+                600
+            ),
+        },
+    },
+    methods:{
+        click(complaint){
+            this.Complaint = complaint
+          
+        }
     }
 }
 </script>
