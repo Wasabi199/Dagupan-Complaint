@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Services\Barangays;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,10 +17,11 @@ class ComplaintsFactory extends Factory
      */
     public function definition()
     {
+
         return [
             //
             'name'=>$this->faker->name(),
-            'location'=>$this->faker->city(),
+            'location'=>$this->faker->randomElement(Barangays::$barangay),
             'value'=>$this->faker->paragraphs($nb = 3, $asText = true)
         ];
     }
