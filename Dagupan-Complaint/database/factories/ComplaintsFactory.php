@@ -21,7 +21,10 @@ class ComplaintsFactory extends Factory
         return [
             //
             'name'=>$this->faker->name(),
-            'location'=>$this->faker->randomElement(Barangays::$barangay),
+            'address'=>$this->faker->randomElement(Barangays::barangay()),
+            'complainant_address'=>$this->faker->randomElement(Barangays::barangay()),
+            'age'=>$this->faker->numberBetween($min=20, $max=50),
+            'email'=>$this->faker->email(),
             'value'=>$this->faker->paragraphs($nb = 3, $asText = true)
         ];
     }

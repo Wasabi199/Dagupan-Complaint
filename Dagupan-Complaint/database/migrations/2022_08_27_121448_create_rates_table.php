@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('complaints', function (Blueprint $table) {
+        Schema::create('rates', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('address');
-            $table->string('complainant_address');
-            $table->integer('age');
-            $table->string('email');
-            $table->boolean('onRead')->default(false);
-            $table->longText('value');
+            $table->string('rates');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('complaints');
+        Schema::dropIfExists('rates');
     }
 };

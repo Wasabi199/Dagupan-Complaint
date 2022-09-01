@@ -4,9 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\ComplaintImages;
 use App\Models\Complaints;
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use App\Models\{User, Rates};
 use Illuminate\Support\Facades\Hash;
 class DatabaseSeeder extends Seeder
 {
@@ -29,6 +30,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => Hash::make('password'),
         ]);
-        Complaints::factory(50)->create();
+        
+        Complaints::factory(50)->has(ComplaintImages::factory(), 'image')->create();
+        Rates::factory(50)->create();
     }
 }
