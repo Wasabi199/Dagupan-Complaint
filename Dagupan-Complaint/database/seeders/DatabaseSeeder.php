@@ -30,6 +30,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => Hash::make('password'),
         ]);
+        User::create([
+            'name' => "Barangay Admin",
+            'userType' => 'Barangay',
+            'email' => 'barangay@barangay.com',
+            'password' => Hash::make('password'),
+        ]);
         
         Complaints::factory(50)->has(ComplaintImages::factory(), 'image')->create();
         Rates::factory(50)->create();

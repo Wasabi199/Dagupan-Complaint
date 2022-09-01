@@ -43,3 +43,7 @@ Route::post('user/rate/submit',[UserController::class,'submitRequest'])->name('s
 Route::prefix('Admin')->middleware(['auth:sanctum','Admin'])->group(function(){
     Route::get('DagupanComplaint',[AdminController::class,'dagupanComplaint'])->name('Complaints');
 });
+
+// Route::prefix('Barangay')->middleware(['auth:sanctum','Admin'])->group(function(){
+   
+// });

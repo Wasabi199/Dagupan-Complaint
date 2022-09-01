@@ -72,5 +72,10 @@ class DashboardController extends Controller
                 'month'=>$month
             ]);
         }   
+        if(Auth::user()->userType == 'Barangay'){
+            return Inertia::render('Barangay/Dashboard',[
+           
+            ]);
+        }  
     }
 }

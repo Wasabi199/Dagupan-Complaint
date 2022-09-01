@@ -68,5 +68,6 @@ class Kernel extends HttpKernel
 
         // Middleware Created
         'Admin'=>\App\Http\Middleware\Admin::class,
+        'Barangay'=>\App\Http\Middleware\Barangay::class,
     ];
 }
